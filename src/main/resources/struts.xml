@@ -7,9 +7,9 @@
 	<package name="root" extends="struts-default">
 
 		<action name="login" class="loginAction">
-			<result name="input">/input.jsp</result>
-			<result name="success">/input.jsp</result>
-			<result name="error">/input.jsp</result>
+			<result name="input">/login.jsp</result>
+			<result name="success">/login.jsp</result>
+			<result name="error">/login.jsp</result>
 		</action>
 
 	</package>

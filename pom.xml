@@ -39,6 +39,11 @@
 			<artifactId>struts2-spring-plugin</artifactId>
 			<version>${org.apache.struts-version}</version>
 		</dependency>
+		<dependency>
+			<groupId>com.jwj.russianblue</groupId>
+			<artifactId>core</artifactId>
+			<version>0.1</version>
+		</dependency>
 	</dependencies>
 	<build>
 		<finalName>webapp</finalName>

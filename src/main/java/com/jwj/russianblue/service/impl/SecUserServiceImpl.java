@@ -32,7 +32,7 @@ public class SecUserServiceImpl extends RbServiceImpl<SecUser> implements SecUse
 	}
 
 	@Override
-	public void doubleInsert(SecUser user) {
+	public void saveDouble(SecUser user) {
 		final SecUserDao secUserDao = (SecUserDao) getDao();
 		secUserDao.save(user);
 		secUserDao.save(user);

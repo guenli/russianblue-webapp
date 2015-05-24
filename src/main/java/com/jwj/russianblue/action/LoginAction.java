@@ -27,7 +27,7 @@ public class LoginAction extends ActionSupport {
 		secUser.setChannelCode("xcode");
 		
 		System.err.println(userService);
-		userService.doubleInsert(secUser);
+		userService.saveDouble(secUser);
 		
 //		List<SecUser> users = userService.getByUserName("xjwjtest");
 //		for (SecUser user : users) {

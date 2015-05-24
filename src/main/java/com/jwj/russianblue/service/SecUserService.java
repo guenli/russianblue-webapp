@@ -10,6 +10,6 @@ public interface SecUserService extends RbService<SecUser, BigDecimal> {
 
 	public List<SecUser> getByUserName(String username);
 	
-	public void doubleInsert(SecUser user);
+	public void saveDouble(SecUser user);
 	
 }

@@ -8,7 +8,7 @@ import com.jwj.russianblue.core.entity.RbEntity;
 @SuppressWarnings("serial")
 public abstract class RbServiceImpl<T extends RbEntity> implements RbService<T, BigDecimal> {
 	
-	private RbDao<T, BigDecimal> dao;
+	protected RbDao<T, BigDecimal> dao;
 
 	@Override
 	public T getByPk(BigDecimal pk) {
@@ -23,7 +23,7 @@ public abstract class RbServiceImpl<T extends RbEntity> implements RbService<T, 
 	}
 
 	@Override
-	public Integer update(T entity) throws Exception {
+	public Integer update(T entity) {
 		int count = getDao().update(entity);
 		return count;
 	}
@@ -50,8 +50,6 @@ public abstract class RbServiceImpl<T extends RbEntity> implements RbService<T, 
 		return (DAO) dao;
 	}
 
-	public <DAO extends RbDao<T, BigDecimal>> void setDao(DAO dao) {
-		this.dao = dao;
-	}
+	public abstract <DAO extends RbDao<T, BigDecimal>> void setDao(DAO dao);
 
 }

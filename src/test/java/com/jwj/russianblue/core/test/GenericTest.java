@@ -12,7 +12,7 @@ import org.springframework.transaction.annotation.Transactional;
 import com.microsoft.sqlserver.jdbc.SQLServerDriver;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations = { "classpath:spring-context.xml", "classpath:**/spring-*.xml" })
+@ContextConfiguration(locations = { "classpath:spring-datasource.xml", "classpath:spring-context.xml" })
 @TransactionConfiguration(transactionManager = "coreTransactionManager", defaultRollback = true)
 @Transactional("coreTransactionManager")
 public class GenericTest extends AbstractTest {

@@ -2,7 +2,8 @@
 <web-app version="3.0" xmlns="http://java.sun.com/xml/ns/javaee"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
-	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+	xsi:schemaLocation="
+		http://java.sun.com/xml/ns/javaee
         http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
 
 	<listener>
@@ -12,8 +13,8 @@
 	<context-param>
 		<param-name>contextConfigLocation</param-name>
 		<param-value>
-			/WEB-INF/classes/spring-context.xml
 			/WEB-INF/classes/spring-datasource.xml
+			/WEB-INF/classes/spring-context.xml
 		</param-value>
 	</context-param>
 

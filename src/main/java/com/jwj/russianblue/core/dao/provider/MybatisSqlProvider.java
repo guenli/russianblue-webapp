@@ -19,7 +19,7 @@ import com.google.common.collect.Lists;
 import com.jwj.russianblue.core.entity.RbEntity;
 import com.jwj.russianblue.core.util.sql.RbSqlHelper;
 
-public abstract class MybatisSqlProvider {
+public class MybatisSqlProvider {
 
 	private List<Field> getFields(RbEntity entity) {
 		List<Field> fields = Lists.newArrayList();

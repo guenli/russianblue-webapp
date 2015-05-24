@@ -3,7 +3,7 @@
 <configuration>
 
 	<properties>
-		<property name="dialect" value="MSSQL" />
+		<property name="dialect" value="MS-SQL" />
 	</properties>
 
 	<settings>
@@ -17,6 +17,12 @@
 		<setting name="defaultExecutorType" value="SIMPLE" />
 		<setting name="defaultStatementTimeout" value="30000" />
 		<setting name="mapUnderscoreToCamelCase" value="true" />
+		<setting name="logPrefix" value="[MYBATIS]" />
+		<setting name="logImpl" value="SLF4J" />
 	</settings>
+
+	<typeHandlers>
+		<typeHandler handler="com.jwj.russianblue.core.dao.handler.DateTimeTypeHandler" javaType="org.joda.time.DateTime" />
+	</typeHandlers>
 
 </configuration>

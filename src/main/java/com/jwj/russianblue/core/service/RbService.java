@@ -8,9 +8,9 @@ public interface RbService<T extends RbEntity, PK extends Serializable> extends 
 	
 	public T getByPk(PK pk);
 
-	public Integer save(T entity) throws Exception;
+	public Integer save(T entity);
 
-	public Integer update(T entity) throws Exception;
+	public Integer update(T entity);
 
 	public Integer delete(T entity);
 

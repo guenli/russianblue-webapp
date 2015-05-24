@@ -38,4 +38,18 @@ public class SecUserServiceImpl extends RbServiceImpl<SecUser> implements SecUse
 		secUserDao.save(user);
 	}
 	
+	@Override
+	public void xxxxDouble(SecUser user) {
+		final SecUserDao secUserDao = (SecUserDao) getDao();
+		secUserDao.save(user);
+		secUserDao.save(user);
+	}
+	
+	@Override
+	public void ttttDouble(SecUser user) {
+		final SecUserDao secUserDao = (SecUserDao) getDao();
+		secUserDao.save(user);
+		secUserDao.save(user);
+	}
+	
 }

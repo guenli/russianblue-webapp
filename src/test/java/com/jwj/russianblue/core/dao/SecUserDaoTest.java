@@ -54,7 +54,9 @@ public class SecUserDaoTest extends GenericTest {
 		secUser.setStatus("Y");
 		secUser.setChannelId(BigDecimal.ONE);
 		secUser.setChannelCode("code");
-		secUserService.saveDouble(secUser);
+//		secUserService.saveDouble(secUser);
+//		secUserService.xxxxDouble(secUser);
+		secUserService.ttttDouble(secUser);
 	}
 
 }

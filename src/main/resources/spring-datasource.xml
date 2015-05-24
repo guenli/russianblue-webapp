@@ -41,7 +41,7 @@
 	<tx:annotation-driven transaction-manager="coreTransactionManager" />
 
 	<aop:config>
-		<aop:pointcut id="corePointcut" expression="execution(public * com.jwj.russianblue.service.*.*(..))" />
+		<aop:pointcut id="corePointcut" expression="execution(public * com.jwj.russianblue..service.*.*(..))" />
 		<aop:advisor pointcut-ref="corePointcut" advice-ref="coreTxAdvice" />
 	</aop:config>
 

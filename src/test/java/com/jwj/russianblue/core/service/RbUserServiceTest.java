@@ -1,4 +1,4 @@
-package com.jwj.russianblue.core.dao;
+package com.jwj.russianblue.core.service;
 
 import java.util.List;
 
@@ -14,15 +14,15 @@ import com.jwj.russianblue.core.test.GenericTest;
 import com.jwj.russianblue.entity.RbUser;
 import com.jwj.russianblue.service.RbUserService;
 
-public class RbUserDaoTest extends GenericTest {
+public class RbUserServiceTest extends GenericTest {
 
 	@Autowired
 	private RbUserService rbUserService;
 
 	@Test
-	public void testFindByUserName() {
-		List<RbUser> users = rbUserService.getByName("TEST");
-		Assert.assertTrue(Iterables.size(users) > 0);
+	public void testFindByName() {
+		List<RbUser> users = rbUserService.getByName("admin");
+		Assert.assertEquals(1, Iterables.size(users));
 	}
 
 	@Test
@@ -36,8 +36,8 @@ public class RbUserDaoTest extends GenericTest {
 	@Test
 	public void testSave() {
 		RbUser user = RbEntityFactory.createEntity(RbUser.class, SystemUser.SYSTEM.toString(), DateTime.now());
-		user.setCode("TEST");
-		user.setName("TEST NAME");
+		user.setCode("TESTSAVE");
+		user.setName("TESTSAVE");
 		user.setPassword("12345678");
 		user.setDescription("TEST DESC.");
 		user.setFirstLoginTime(DateTime.now());
@@ -49,17 +49,24 @@ public class RbUserDaoTest extends GenericTest {
 	}
 
 	@Test
-	public void testDoubleSave() {
-		RbUser user = RbEntityFactory.createEntity(RbUser.class, SystemUser.SYSTEM.toString(), DateTime.now());
-		user.setCode("TEST");
-		user.setName("TEST NAME");
-		user.setPassword("12345678");
-		user.setDescription("TEST DESC.");
-		user.setFirstLoginTime(DateTime.now());
-		user.setLastLoginTime(DateTime.now());
-		user.setLoginCount(0);
-		user.setErrorCount(0);
-		// TODO
+	public void testSaveDouble() {
+		try {
+			RbUser user = RbEntityFactory.createEntity(RbUser.class, SystemUser.SYSTEM.toString(), DateTime.now());
+			user.setCode("TEST");
+			user.setName("TEST");
+			user.setPassword("12345678");
+			user.setDescription("TEST DESC.");
+			user.setFirstLoginTime(DateTime.now());
+			user.setLastLoginTime(DateTime.now());
+			user.setLoginCount(0);
+			user.setErrorCount(0);
+			rbUserService.saveDouble(user);
+		}catch(Exception e){
+			e.printStackTrace();
+		}
+
+		List<RbUser> users = rbUserService.getByName("TEST");
+		Assert.assertEquals(0, Iterables.size(users));
 	}
 
 }

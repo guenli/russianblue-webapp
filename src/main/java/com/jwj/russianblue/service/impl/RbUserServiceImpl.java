@@ -36,6 +36,7 @@ public class RbUserServiceImpl extends RbServiceImpl<RbUser> implements RbUserSe
 		final RbUserDao secUserDao = (RbUserDao) getDao();
 		secUserDao.save(user);
 		secUserDao.save(user);
+		System.err.print(true);
 	}
 
 }

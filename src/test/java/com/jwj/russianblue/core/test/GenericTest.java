@@ -1,5 +1,6 @@
 package com.jwj.russianblue.core.test;
 
+import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.runner.RunWith;
 import org.springframework.jdbc.datasource.SimpleDriverDataSource;
@@ -16,13 +17,22 @@ import com.microsoft.sqlserver.jdbc.SQLServerDriver;
 @TransactionConfiguration(transactionManager = "coreTransactionManager", defaultRollback = true)
 @Transactional("coreTransactionManager")
 public class GenericTest extends AbstractTest {
-	
-	@BeforeClass
-	public static void jndiSetup() throws Exception {
+
+	static void jndiSetup() throws Exception {
 		SimpleNamingContextBuilder builder = SimpleNamingContextBuilder.emptyActivatedContextBuilder();
-		builder.bind("java:comp/env/jdbc/core", new SimpleDriverDataSource(new SQLServerDriver(),
-				"jdbc:sqlserver://msdb.softleader.com.tw;database=wwunionBTBDB_BCMN", "sa", "sldb01"));
+		builder.bind("java:comp/env/jdbc/core",new SimpleDriverDataSource(new SQLServerDriver(),
+				"jdbc:sqlserver://localhost;database=russianblue", "sa", "admin") );
 		builder.activate();
 	}
-	
+
+	@BeforeClass
+	public static void beforeClass() throws Exception {
+//		jndiSetup();
+	}
+
+	@AfterClass
+	public static void afterClass() {
+		// reserved
+	}
+
 }

@@ -29,7 +29,7 @@
 	<Resource name="jdbc/core" auth="Container" type="javax.sql.DataSource"
 		factory="org.apache.tomcat.dbcp.dbcp.BasicDataSourceFactory"
 		driverClassName="com.microsoft.sqlserver.jdbc.SQLServerDriver"
-		url="jdbc:sqlserver://msdb.softleader.com.tw;database=wwunionBTBDB_BCMN"
-		username="sa" password="sldb01" maxActive="20" maxIdle="10" maxWait="-1" />
+		url="jdbc:sqlserver://localhost;database=russianblue"
+		username="sa" password="admin" maxActive="20" maxIdle="10" maxWait="-1" />
 
 </Context>

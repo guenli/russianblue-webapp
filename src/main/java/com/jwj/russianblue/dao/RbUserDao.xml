@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jwj.russianblue.dao.RbUserDao">
+
+	<select id="findByName" resultType="com.jwj.russianblue.entity.RbUser">
+		SELECT * FROM rb_user WHERE name = #{name}
+	</select>
+
+</mapper>

@@ -9,17 +9,20 @@ import lombok.Setter;
 
 import org.joda.time.DateTime;
 
+import com.jwj.russianblue.core.enums.YesNo;
+
 @Getter
 @Setter
 @SuppressWarnings("serial")
 public class RbEntityBase implements RbEntity {
-	
+
 	@Transient
 	private BigDecimal id;
-	
-	private String createdBy;
-	private DateTime createdDate;
-	private String lastModifiedBy;
-	private DateTime lastModifiedDate;
-	
+
+	private String createUser;
+	private DateTime createTime;
+	private String modifyUser;
+	private DateTime modifyTime;
+	private YesNo sysStatus;
+
 }

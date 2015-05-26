@@ -22,7 +22,12 @@
 	
 	<util:properties id="sysProperties" location="classpath:system.properties" />
 	
-	<bean id="loginAction" class="com.jwj.russianblue.action.LoginAction">
-	</bean>
+	<bean id="loginAction" class="com.jwj.russianblue.action.LoginAction"></bean>
+	
+	<bean id="timingAdvice" class="org.springframework.aop.interceptor.PerformanceMonitorInterceptor" />
+
+	<aop:config>
+		<aop:advisor pointcut="execution(public * com.jwj.russianblue..service.*.*(..))" advice-ref="timingAdvice" />
+	</aop:config>
 
 </beans>

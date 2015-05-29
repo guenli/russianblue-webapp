@@ -1,4 +1,4 @@
-package com.jwj.russianblue.core.test;
+package com.jwj.russianblue.test;
 
 import org.springframework.test.context.junit4.AbstractJUnit4SpringContextTests;
 

@@ -12,6 +12,8 @@ import com.jwj.russianblue.entity.RbUser;
 @Component("rbUserDao")
 public interface RbUserDao extends RbDao<RbUser, BigDecimal> {
 
+	public RbUser findByCode(@Param("code") String code);
+
 	public List<RbUser> findByName(@Param("name") String name);
 
 }

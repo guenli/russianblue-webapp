@@ -1,8 +1,10 @@
-package com.jwj.russianblue.core.test;
+package com.jwj.russianblue.test;
 
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.runner.RunWith;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.jdbc.datasource.SimpleDriverDataSource;
 import org.springframework.mock.jndi.SimpleNamingContextBuilder;
 import org.springframework.test.context.ContextConfiguration;
@@ -17,6 +19,8 @@ import com.microsoft.sqlserver.jdbc.SQLServerDriver;
 @TransactionConfiguration(transactionManager = "coreTransactionManager", defaultRollback = true)
 @Transactional("coreTransactionManager")
 public class GenericTest extends AbstractTest {
+
+	protected Logger log = LoggerFactory.getLogger(getClass());
 
 	static void jndiSetup() throws Exception {
 		SimpleNamingContextBuilder builder = SimpleNamingContextBuilder.emptyActivatedContextBuilder();

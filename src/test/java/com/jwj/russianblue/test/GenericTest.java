@@ -2,6 +2,7 @@ package com.jwj.russianblue.test;
 
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
+import org.junit.Ignore;
 import org.junit.runner.RunWith;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -18,6 +19,7 @@ import com.microsoft.sqlserver.jdbc.SQLServerDriver;
 @ContextConfiguration(locations = { "classpath:spring-datasource.xml", "classpath:spring-context.xml" })
 @TransactionConfiguration(transactionManager = "coreTransactionManager", defaultRollback = true)
 @Transactional("coreTransactionManager")
+@Ignore
 public class GenericTest extends AbstractTest {
 
 	protected Logger log = LoggerFactory.getLogger(getClass());

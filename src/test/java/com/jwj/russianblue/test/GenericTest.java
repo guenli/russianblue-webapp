@@ -6,14 +6,10 @@ import org.junit.Ignore;
 import org.junit.runner.RunWith;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.jdbc.datasource.SimpleDriverDataSource;
-import org.springframework.mock.jndi.SimpleNamingContextBuilder;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.transaction.TransactionConfiguration;
 import org.springframework.transaction.annotation.Transactional;
-
-import com.microsoft.sqlserver.jdbc.SQLServerDriver;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = { "classpath:spring-datasource.xml", "classpath:spring-context.xml" })
@@ -25,10 +21,10 @@ public class GenericTest extends AbstractTest {
 	protected Logger log = LoggerFactory.getLogger(getClass());
 
 	static void jndiSetup() throws Exception {
-		SimpleNamingContextBuilder builder = SimpleNamingContextBuilder.emptyActivatedContextBuilder();
-		builder.bind("java:comp/env/jdbc/core",new SimpleDriverDataSource(new SQLServerDriver(),
-				"jdbc:sqlserver://localhost;database=russianblue", "sa", "admin") );
-		builder.activate();
+//		SimpleNamingContextBuilder builder = SimpleNamingContextBuilder.emptyActivatedContextBuilder();
+//		builder.bind("java:comp/env/jdbc/core",new SimpleDriverDataSource(new SQLServerDriver(),
+//				"jdbc:sqlserver://localhost;database=russianblue", "sa", "admin") );
+//		builder.activate();
 	}
 
 	@BeforeClass

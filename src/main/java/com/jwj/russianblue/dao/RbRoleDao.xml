@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jwj.russianblue.dao.RbRoleDao">
+
+	<select id="findByCode" resultType="com.jwj.russianblue.entity.RbRole">
+		SELECT * FROM rb_role WHERE code = #{code}
+	</select>
+	
+	<select id="findByUserId" resultType="com.jwj.russianblue.entity.RbRole">
+		SELECT r.*
+		  FROM rb_user u, rb_user_role ur, rb_role r
+		 WHERE u.id = ur.user_id AND ur.role_id = r.id
+		   AND ur.user_id = #{userId}
+	</select>
+
+</mapper>

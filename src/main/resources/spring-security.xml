@@ -8,6 +8,9 @@
 	http://www.springframework.org/schema/security/spring-security.xsd">
 	
 	<http auto-config="true">
+		<access-denied-handler error-page="/login?denied=403" />
+		
+		<intercept-url pattern="/" access="hasRole('USER')" />
 		<intercept-url pattern="/admin**" access="hasRole('ADMIN')" />
 		
 		<form-login

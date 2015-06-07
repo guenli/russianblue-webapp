@@ -15,5 +15,7 @@ public interface RbUserDao extends RbDao<RbUser, BigDecimal> {
 	public RbUser findByCode(@Param("code") String code);
 
 	public List<RbUser> findByName(@Param("name") String name);
+	
+	public List<RbUser> findByRoleId(@Param("roleId") Long roleId);
 
 }

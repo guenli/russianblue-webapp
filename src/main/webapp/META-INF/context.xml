@@ -25,11 +25,11 @@
 
 	<!-- url: The JDBC connection url for connecting to your MySQL database.
 		 -->
-
+	<!--
 	<Resource name="jdbc/core" auth="Container" type="javax.sql.DataSource"
 		factory="org.apache.tomcat.dbcp.dbcp.BasicDataSourceFactory"
 		driverClassName="com.microsoft.sqlserver.jdbc.SQLServerDriver"
 		url="jdbc:sqlserver://localhost;database=russianblue"
 		username="sa" password="admin" maxActive="20" maxIdle="10" maxWait="-1" />
-
+	-->
 </Context>

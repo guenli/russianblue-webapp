@@ -9,5 +9,12 @@
 	<select id="findByName" resultType="com.jwj.russianblue.entity.RbUser">
 		SELECT * FROM rb_user WHERE name = #{name}
 	</select>
+	
+	<select id="findByRoleId" resultType="com.jwj.russianblue.entity.RbUser">
+		SELECT u.*
+		  FROM rb_user u, rb_user_role ur, rb_role r
+		 WHERE u.id = ur.user_id AND ur.role_id = r.id
+		   AND ur.role_id = #{roleId}
+	</select>
 
 </mapper>

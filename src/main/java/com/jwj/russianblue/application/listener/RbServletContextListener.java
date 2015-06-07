@@ -1,4 +1,4 @@
-package com.jwj.russianblue.listener;
+package com.jwj.russianblue.application.listener;
 
 import java.util.Properties;
 

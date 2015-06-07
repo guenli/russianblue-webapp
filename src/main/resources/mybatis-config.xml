@@ -3,7 +3,7 @@
 <configuration>
 
 	<properties>
-		<property name="dialect" value="MS-SQL" />
+		<property name="dialect" value="H2" />
 	</properties>
 
 	<settings>

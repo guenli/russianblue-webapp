@@ -14,7 +14,7 @@ import com.jwj.russianblue.core.enums.YesNo;
 @Getter
 @Setter
 @SuppressWarnings("serial")
-public class RbEntityBase implements RbEntity {
+public abstract class RbEntityBase implements RbEntity {
 
 	@Transient
 	private BigDecimal id;
@@ -24,5 +24,14 @@ public class RbEntityBase implements RbEntity {
 	private String modifyUser;
 	private DateTime modifyTime;
 	private YesNo sysStatus;
-
+	
+	/** get account is enable or not **/
+	public boolean isEnable() {
+		if (YesNo.Y.compareTo(getSysStatus()) == 0) {
+			return true;
+		}else {
+			return false;
+		}
+	}
+	
 }

@@ -21,4 +21,17 @@ public class RbUser extends RbEntityBase {
 	private DateTime lastLoginTime;
 	private Integer loginCount;
 	private Integer errorCount;
+	
+	private DateTime expireTime;
+	private Boolean isLock;
+	
+	/** get account is expire or not **/
+	public boolean getIsExpire() {
+		if (expireTime.getMillis() < System.currentTimeMillis()) {
+			return true;
+		}else {
+			return false;
+		}
+	}
+	
 }

@@ -10,8 +10,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import com.google.common.collect.Iterables;
 import com.jwj.russianblue.core.entity.factory.RbEntityFactory;
 import com.jwj.russianblue.core.enums.SystemUser;
+import com.jwj.russianblue.core.enums.YesNo;
 import com.jwj.russianblue.entity.RbUser;
-import com.jwj.russianblue.service.RbUserService;
 import com.jwj.russianblue.test.GenericTest;
 
 public class RbUserServiceTest extends GenericTest {
@@ -42,6 +42,8 @@ public class RbUserServiceTest extends GenericTest {
 		user.setDescription("TEST DESC.");
 		user.setFirstLoginTime(DateTime.now());
 		user.setLastLoginTime(DateTime.now());
+		user.setExpireTime(DateTime.parse("2099-01-01"));
+		user.setLockStatus(YesNo.N);
 		user.setLoginCount(0);
 		user.setErrorCount(0);
 		int result = rbUserService.save(user);

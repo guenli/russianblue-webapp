@@ -10,8 +10,8 @@ public class RbEntityFactory {
 
 	public static <T extends RbEntityBase> T createEntity(Class<T> entityClass, final String createUser, final DateTime createTime) {
 		try {
-			T entity = entityClass.newInstance();
-			if (entityClass.isAssignableFrom(RbEntityLogTimeBase.class)) {
+			T entity = entityClass.newInstance(); 
+			if (entity instanceof RbEntityLogTimeBase) {
 				((RbEntityLogTimeBase) entity).setCreateUser(createUser);
 				((RbEntityLogTimeBase) entity).setCreateTime(createTime);
 				((RbEntityLogTimeBase) entity).setModifyUser(createUser);

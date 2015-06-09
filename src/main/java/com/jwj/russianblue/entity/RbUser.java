@@ -7,7 +7,6 @@ import lombok.ToString;
 import org.joda.time.DateTime;
 
 import com.jwj.russianblue.core.entity.RbEntityLogTimeBase;
-import com.jwj.russianblue.core.enums.UserType;
 import com.jwj.russianblue.core.enums.YesNo;
 
 @Getter
@@ -20,7 +19,6 @@ public class RbUser extends RbEntityLogTimeBase {
 	private String name;
 	private String description;
 	
-	private UserType userType;
 	private String password;
 	private DateTime firstLoginTime;
 	private DateTime lastLoginTime;

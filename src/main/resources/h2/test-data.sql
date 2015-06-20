@@ -10,7 +10,7 @@ INSERT INTO rb_user (
 VALUES (
 	1, 'TEST', CURRENT_TIMESTAMP(), 'TEST', CURRENT_TIMESTAMP(), 'Y',
 	'admin', 'admin', 'administrator', 
-	'admin123', null, null, 0, 0, '2100-01-01 00:00:00', 'N'
+	'$2a$10$.mAivHSvvrO9MkQ77lGD5.WxVmj75qQG7dqcxzL2vRgr/IJOQmZqu', null, null, 0, 0, '2100-01-01 00:00:00', 'N'
 );
 
 INSERT INTO rb_user (
@@ -20,7 +20,7 @@ INSERT INTO rb_user (
 VALUES (
 	2, 'TEST', CURRENT_TIMESTAMP(), 'TEST', CURRENT_TIMESTAMP(), 'Y',
 	'user', 'user', 'general user', 
-	'user123', null, null, 0, 0, '2100-01-01 00:00:00', 'N'
+	'$2a$10$749VfAYgJXAQm3FsOM4ixu8ItEC9cjwf0yAhEKdmJbvY6i.7u2nLC', null, null, 0, 0, '2100-01-01 00:00:00', 'N'
 );
 
 
